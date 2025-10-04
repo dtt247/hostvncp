@@ -26,7 +26,7 @@ IPADDRESS=$(curl -s https://cyberpanel.sh/?ip)
 DIR=$(pwd)
 BASH_DIR="/var/hostvn"
 GITHUB_RAW_LINK="https://raw.githubusercontent.com"
-EXT_LINK="https://raw.githubusercontent.com/dtt247/hostvn/master"
+EXT_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/15338502c92f7aef02a67a061d7bf9d7a70e4f7f"
 UPDATE_LINK="${EXT_LINK}/ubuntu/update"
 FILE_INFO="${BASH_DIR}/.hostvn.conf"
 HOSTNAME=$(hostname)
@@ -40,7 +40,7 @@ AUTHOR_CONTACT="https://www.facebook.com/groups/hostvn.vn"
 PHPMYADMIN_VERSION=$(curl -s ${UPDATE_LINK}/version | grep "phpmyadmin_version=" | cut -f2 -d'=')
 MARIADB_VERSION=$(curl -s ${UPDATE_LINK}/version | grep "mariadb_version=" | cut -f2 -d'=')
 # shellcheck disable=SC2207
-PHP_LIST=($(curl -s https://raw.githubusercontent.com/dtt247/hostvn/master/ubuntu/update/version | grep "php_list=" | cut -f2 -d'='))
+PHP_LIST=($(curl -s https://raw.githubusercontent.com/dtt247/hostvncp/15338502c92f7aef02a67a061d7bf9d7a70e4f7f/ubuntu/update/version | grep "php_list=" | cut -f2 -d'='))
 
 # Set Lang
 OPTION_CHANGE_SSH="Ban co muon thay doi port SSH khong ? "
@@ -278,7 +278,7 @@ check_duplicate_php() {
 install_nginx(){
     apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip uuid-dev libbrotli-dev -y
     apt autoremove -y
-    UPDATE_LINK="https://raw.githubusercontent.com/dtt247/hostvn/master/ubuntu/update"
+    UPDATE_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/15338502c92f7aef02a67a061d7bf9d7a70e4f7f/ubuntu/update"
     MODULE_PATH="/usr/share/nginx_module"
     mkdir -p "${MODULE_PATH}"
     NGINX_VERSION=$(curl -s ${UPDATE_LINK}/version | grep "nginx_version=" | cut -f2 -d'=')
@@ -298,7 +298,7 @@ install_nginx(){
     # NPS_RELEASE_NUMBER=${NPS_VERSION/beta/}
     # NPS_RELEASE_NUMBER=${NPS_VERSION/stable/}
 
-    # psol_url=https://dl.google.com/dl/page-speed/psol/${NPS_RELEASE_NUMBER}.tar.gz
+    # psol_url=https://www.modpagespeed.com/release_archive/1.13.35.2/psol-1.13.35.2-x64.tar.gz
     # [ -e scripts/format_binary_url.sh ] && psol_url=$(scripts/format_binary_url.sh PSOL_BINARY_URL)
     # wget -O- "${psol_url}" | tar -xz
 
@@ -3586,8 +3586,8 @@ printf "              Luu lai thong tin duoi day de truy cap SSH va phpMyAdmin  
 printf "                  ${RED}%s${NC}\n           \n" "De mo Menu su dung lenh:  hostvn"
 printf "==========================================================================\n"
 printf "SSH  Port                    : %s\n" "${SSH_PORT}"
-printf "phpMyAdmin                   : %s\n" "https://${IPADDRESS}:${RANDOM_ADMIN_PORT}/phpmyadmin"
-printf "Link Opcache Dashboard       : %s\n" "https://${IPADDRESS}:${RANDOM_ADMIN_PORT}/opcache"
+printf "phpMyAdmin                   : %s\n" "http://${IPADDRESS}:${RANDOM_ADMIN_PORT}/phpmyadmin"
+printf "Link Opcache Dashboard       : %s\n" "http://${IPADDRESS}:${RANDOM_ADMIN_PORT}/opcache"
 echo "User phpMyAdmin va Admin Tool: admin                                   "
 printf "Password Admin tool          : %s\n" "${ADMIN_TOOL_PWD}"
 printf "Password phpMyAdmin          : %s\n" "${sql_admin_pass}"
