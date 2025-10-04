@@ -66,7 +66,7 @@ while [ "${CHOICE}" != "0" ]; do
         ;;
     3)
         clear
-        UPDATE_LINK="http://scripts.hostvn.net/ubuntu/update"
+        UPDATE_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/main/ubuntu/update"
         NGINX_NEW_VERSION=$(curl -s ${UPDATE_LINK}/version | grep "nginx_new_version=" | cut -f2 -d'=')
         NGINX_CURRENT_VERSION=$(curl -s ${UPDATE_LINK}/version | grep "nginx_version=" | cut -f2 -d'=')
         if [[ -n "$NGINX_NEW_VERSION" && "$NGINX_NEW_VERSION" != "$NGINX_CURRENT_VERSION" ]]; then
