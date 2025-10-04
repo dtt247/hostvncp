@@ -20,7 +20,7 @@ Script được viết bằng shell dùng để cài đặt LEMP Stack (Nginx - 
 ## 2. Cách cài đặt
 
 ```shell
-curl -sO https://raw.githubusercontent.com/dtt247/hostvn/master/install && chmod +x install && ./install
+curl -sO https://raw.githubusercontent.com/dtt247/hostvncp/master/install && chmod +x install && ./install
 ```
 
 ## 3. Chi tiết Script:
