@@ -18,7 +18,7 @@ NC='\033[0m'
 
 OS=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
 
-SCRIPT_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/main/${OS}"
+SCRIPT_LINK="curl -sO https://raw.githubusercontent.com/dtt247/hostvncp/15338502c92f7aef02a67a061d7bf9d7a70e4f7f/${OS}"
 OS_LIST="centos ubuntu debian almalinux"
 RAM_TOTAL=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
 LOW_RAM='400000'
