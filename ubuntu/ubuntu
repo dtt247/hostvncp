@@ -18,7 +18,7 @@ rm -rf ubuntu
 DIR=$(pwd)
 
 # Set link
-SCRIPT_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/master/ubuntu"
+SCRIPT_LINK="https://raw.githubusercontent.com/dtt247/hostvncp/main/ubuntu"
 
 welcome(){
     clear
